@@ -162,7 +162,7 @@ app.post('/ws_event', (req, res) => {
 
 app.post('/analytics', (req, res) => {
 
-  console.log(">>> Transcripts and caller's speech sentiment score:", req.body);
+  console.log(">>> Transcripts:", req.body);
  
   res.status(200).send('Ok');
 
