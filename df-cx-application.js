@@ -5,15 +5,6 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-// const expressWs = require('express-ws')(app);
-// const { Readable } = require('stream');
-// const cors = require('cors');
-// const https = require('https');
-// const dialogflow = require('dialogflow');
-// const Conversation = require('./conversations');
-
-// const prefix = "https://";
-// const wsprefix = "wss://";
 
 const dfConnectingServer = process.env.DF_CONNECTING_SERVER;
 
@@ -37,7 +28,7 @@ const vonage = new Vonage({
 
 app.use(bodyParser.json());
 
-//----
+//---- CORS policy - update to your requirements
 
 // app.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -133,11 +124,6 @@ app.post('/event', (req, res) => {
 //-----------------------------------------
 
 app.get('/ws_answer', (req, res) => {
-  
-  // const date = new Date().toLocaleString();
-  // console.log(">>> ws_answer at " + date);
-  // console.log(">>> caller call leg uuid:", req.query.original_uuid);
-  // console.log(">>> websocket leg uuid:", req.query.uuid);
 
   const nccoResponse = [
     {
@@ -145,8 +131,6 @@ app.get('/ws_answer', (req, res) => {
       "name": "conference_" + req.query.original_uuid
     }
   ];
-
-  // console.log('>>> nccoResponse:\n', nccoResponse);
 
   res.status(200).json(nccoResponse);
 
@@ -156,10 +140,7 @@ app.get('/ws_answer', (req, res) => {
 
 app.post('/ws_event', (req, res) => {
 
-  // TBD - if second switch case is not needed, change the "switch" to a "if"
-  switch (req.body.status) {
-
-    case "answered":
+  if (req.body.status == "answered") {
 
       const wsUuid = req.body.uuid;
 
@@ -170,18 +151,7 @@ app.post('/ws_event', (req, res) => {
           else {console.log ('>>> TTS to bot websocket ' + wsUuid + ' ok!')}
         });
       }, 2000);  
-      
-      break;
 
-    // case "completed":
-
-    //   // Original call uuid
-    //   const uuid = req.query.orig_uuid; // Original call uuid
-      
-    //   // Free up memory space as the timers array for this call is no longer needed
-    //   app.set(`playtimers_${uuid}`, undefined);
-      
-    //   break;  
   }
 
   res.status(200).send('Ok');
@@ -200,10 +170,6 @@ app.post('/analytics', (req, res) => {
 
 //-----------------------------------------
 
-// app.use('/', express.static(__dirname));
-
-//-----------
-
-app.listen(port, () => console.log(`Server application listening on port ${port}!`));
+app.listen(port, () => console.log(`Application listening on port ${port}!`));
 
 //------------
