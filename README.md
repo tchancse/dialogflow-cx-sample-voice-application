@@ -54,7 +54,7 @@ For the next steps, you will need:</br>
 - Your [Vonage API secret](https://dashboard.nexmo.com/settings), not signature secret, (as **`API_SECRET`**)</br>
 - Your `application ID` (as **`APP_ID`**),</br>
 - The **`phone number linked`** to your application (as **`SERVICE_NUMBER`**), your phone will **call that number**,</br>
-- The Dialogflow reference connection code server public host name and port (as **`DF_CONNECTING_SERVER`**)</br>
+- The Dialogflow reference connection code server public host name and port (as **`DF_CONNECTING_SERVER`**) without any prefix such as https:// or  wss://, without any trailing slash, or sub-path</br></br>
 
 ## Overview on how this sample Voice API application works
 
