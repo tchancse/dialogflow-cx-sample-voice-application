@@ -142,15 +142,17 @@ app.post('/ws_event', (req, res) => {
 
   if (req.body.status == "answered") {
 
-      const wsUuid = req.body.uuid;
+    const wsUuid = req.body.uuid;
 
-      // Get Dialogflow to say its welcome greeting right from the start
-      setTimeout(() => {
-        vonage.calls.talk.start(wsUuid, {text: 'Hello', language: 'en-US', style: 11  , loop: 1}, (err, res) => {
-          if (err) { console.error('>>> TTS to bot websocket ' + wsUuid + 'error:', err); }
-          else {console.log ('>>> TTS to bot websocket ' + wsUuid + ' ok!')}
-        });
-      }, 2000);  
+    // Get Dialogflow to say its welcome greeting right from the start
+    // Change the 'text' argument to be consistent with the DF CX agent welcome intent if necessary
+    // Change the 'text' argument to be consistent with the selected language locale if necessary
+    setTimeout(() => {
+      vonage.calls.talk.start(wsUuid, {text: 'Hello', language: 'en-US', style: 11  , loop: 1}, (err, res) => {
+        if (err) { console.error('>>> TTS to bot websocket ' + wsUuid + 'error:', err); }
+        else {console.log ('>>> TTS to bot websocket ' + wsUuid + ' ok!')}
+      });
+    }, 2000);  
 
   }
 
