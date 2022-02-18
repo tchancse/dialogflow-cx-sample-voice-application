@@ -41,7 +41,7 @@ Enable Voice
 Note: If you are using ngrok for this sample application, the answer URL and event URL look like:</br>
 https://yyyyyyyy.ngrok.io/answer</br>
 https://yyyyyyyy.ngrok.io/event</br> 	
-- Click on [Generate public and private key] if you did not yet create or want new ones, save the private.key file in this application folder.</br>
+- Click on [Generate public and private key] if you did not yet create or want new ones, save the private key file in this application folder as .private.key (leading dot in the file name).</br>
 **IMPORTANT**: Do not forget to click on [Save changes] at the bottom of the screen if you have created a new key set.</br>
 - Link a phone number to this application if none has been linked to the application.
 
@@ -126,7 +126,7 @@ APP_ID</br>
 SERVICE_NUMBER</br>
 DF_CONNECTING_SERVER</br>
 
-add also the parameter PRIVATE_KEY_FILE with the value ./private.key</br>
+add also the parameter PRIVATE_KEY_FILE with the value .private.key</br>
 
 Now, deploy the application:
 

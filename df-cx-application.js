@@ -200,7 +200,7 @@ app.post('/analytics', (req, res) => {
 
 //-----------------------------------------
 
-app.use('/', express.static(__dirname));
+// app.use('/', express.static(__dirname));
 
 //-----------
 
