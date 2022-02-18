@@ -24,8 +24,10 @@ Default local (not public!) reference connection code `port` is: 5000.
 If you plan to test using `Local deployment` with ngrok (Internet tunneling service) for both the Dialogflow reference connection code and this sample application, you may set up [multiple ngrok tunnels](https://ngrok.com/docs#multiple-tunnels).
 
 For the next steps, you will need:
-- The Dialogflow reference connection code server's public hostname and if necessary public port,</br>
-e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:32000`  (as **`DF_CONNECTING_SERVER`**, no `port` is necessary with ngrok or heroku as public hostname)
+- The Dialogflow reference connection code server's public host name and if necessary public port,</br>
+e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:32000`  (as **`DF_CONNECTING_SERVER`**),</br>
+no `port` is necessary with ngrok or heroku as public hostname,</br>
+the host name to specify must not have leading protocol text such as https://, wss://.
 
 ## Set up your Vonage Voice API application credentials and phone number
 
@@ -52,7 +54,7 @@ For the next steps, you will need:</br>
 - Your [Vonage API secret](https://dashboard.nexmo.com/settings), not signature secret, (as **`API_SECRET`**)</br>
 - Your `application ID` (as **`APP_ID`**),</br>
 - The **`phone number linked`** to your application (as **`SERVICE_NUMBER`**), your phone will **call that number**,</br>
-- The Dialogflow reference connection code server public hostname and port (as **`DF_CONNECTING_SERVER`**)</br>
+- The Dialogflow reference connection code server public host name and port (as **`DF_CONNECTING_SERVER`**)</br>
 
 ## Overview on how this sample Voice API application works
 
