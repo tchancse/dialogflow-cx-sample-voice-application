@@ -30,7 +30,7 @@ const vonage = new Vonage({
   apiKey: process.env.API_KEY,
   apiSecret: process.env.API_SECRET,
   applicationId: process.env.APP_ID,
-  privateKey: './private.key'
+  privateKey: process.env.PRIVATE_KEY_FILE
 });
 
 //==========================================================
