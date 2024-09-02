@@ -23,11 +23,21 @@ Default local (not public!) reference connection code `port` is: 5000.
 
 If you plan to test using `Local deployment` with ngrok (Internet tunneling service) for both the Dialogflow reference connection code and this sample application, you may set up [multiple ngrok tunnels](https://ngrok.com/docs#multiple-tunnels).
 
-For the next steps, you will need:
-- The Dialogflow reference connection code server's public host name and if necessary public port,</br>
-e.g. `xxxxxxxx.ngrok.io`, `xxxxxxxx.herokuapp.com`, `myserver.mycompany.com:32000`  (as **`DF_CONNECTING_SERVER`**),</br>
+To do that, [Download and install ngrok](https://ngrok.com/download), an Internet tunelling service.</br>
+Sign in or sign up with [ngrok](https://ngrok.com/), from the menu, follow the **Setup and Installation** guide.
+
+Set up a domain to forward to the local port 8000 (as this server application will be listening on port 8000).
+
+Start ngrok to listen on ports 6000 and 8000,</br>
+please take note of the ngrok **Enpoint URL** that forwards to local port 8000 as it will be need in the next section,
+that URL looks like:</br>
+`https://xxxxxxxx.ngrok.io`
+
+You will also need:
+- The Dialogflow CX reference connection code server's public host name and if necessary public port,</br>
+e.g. `yyyyyyyy.ngrok.io`, `yyyyyyyy.herokuapp.com`, `myserver.mycompany.com:32000`  (as **`DF_CONNECTING_SERVER`**),</br>
 no `port` is necessary with ngrok or heroku as public hostname,</br>
-the host name to specify must not have leading protocol text such as https://, wss://.
+that host name to specify must not have leading protocol text such as https://, wss://, nor trailing /.
 
 ## Set up your Vonage Voice API application credentials and phone number
 
